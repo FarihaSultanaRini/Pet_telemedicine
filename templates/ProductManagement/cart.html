@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+        {% for search in cart.product.all %}
+
+
+
+
+       <div class="card bg-light mb-2`" >
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{ search.image.url }}" class="card-img" alt="...">
+        </div>
+
+        <div class="col-md-8">
+          <div class="card-body">
+{#            <h5 class="card-title">{{ search.name }}</h5>#}
+            <p class="card-text">
+                <table class="table">
+              <tr>
+                  <td> Food name</td>
+                  <td> {{ search.name }} </td>
+{#                {{ search.name }} <br>#}
+              </tr>
+              <tr>
+                  <td> Price </td>
+                  <td>{{ search.price }}</td>
+{#                {{ search.name }} <br>#}
+              </tr>
+              <tr>
+                  <td> Category</td>
+                  <td>{{ search.category }}</td>
+{#                {{ search.name }} <br>#}
+              </tr>
+{#                {{ search.id }} <br>#}
+              <tr>
+                  <td> Description </td>
+                  <td>{{ search.description }}</td>
+{#                {{ search.name }} <br>#}
+              </tr>
+{#                {{ search.price }} <br>#}
+{#                {{ search.category }} <br>#}
+{#                {{ search.description }} <br>#}
+            </p>
+              </table>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+              <h4> Payment <a href="{% url 'order-product' search.id %}" >
+                  On delivery</a><br></h4>
+
+
+
+              <h4>Bkash</h4>
+
+              <form action="{% url 'bkash-order-product' search.id %}" method="POST">
+                  {% csrf_token %}
+                  <input name="transaction_id" type="text" placeholder="Bkash transaction ID" required>
+                  <button type="button" class="btn btn-info">Bkash</button>
+              </form>
+
+
+
+              <a href="{% url 'delete-from-cart' search.id %}" >
+                  <button type="button" class="btn btn-danger">Remove</button>
+              </a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+        {% endfor %}
+
+{#    <h2>Total: {{ total }}</h2>#}
+
+
+
+
+
+{% endblock content %}

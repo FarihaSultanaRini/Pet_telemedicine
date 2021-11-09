@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% block content %}
+<br> <br>
+
+    <div class="alert alert-success" role="alert">
+{#  <h3 class="alert-heading" style="text-align: center ;color: black  " ><b>There are some pets!!</b></h3>#}
+<h3>Your Appoinment Done..
+    You will be notified for the consultaion hour.<br><br><br>
+     </h3>
+    <h4>Tips for pet care:<br>
+         1.Regular Exams are Vital.<br>
+2.Spay and Neuter Your Pets.<br>
+3.Prevent Parasites.<br>
+4.Maintain a Healthy Weight.<br>
+5.Get Regular Vaccinations.<br>
+6.Provide an Enriched Environment.<br>
+7.Microchip and Tattoo Your Pet.<br>
+8.Pets Need Dental Care, Too.<br>
+    </h4>
+</div>
+
+
+
+    <style>
+
+    profile-card-4 {
+    max-width: 450px;
+    background-color: darksalmon;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.profile-card-4 img {
+    transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+    position: relative;
+    padding: 25px;
+    {#background-color: #E9967A;#}
+}
+
+.profile-card-4 .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: -70px;
+    color: #FFF;
+    font-size: 25px;
+}
+
+.profile-card-4 .profile-name p {
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+.profile-card-4 .profile-description {
+    color: #008B8B;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.profile-card-4 .profile-overview {
+    padding: 15px 25px;
+}
+
+.profile-card-4 .profile-overview p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+}
+
+.profile-card-4 .profile-overview h4 {
+    color: #273751;
+    font-weight: bold;
+}
+
+.profile-card-4 .profile-content::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background-color: #FFF;
+    z-index: 0;
+    transform: skewY(1deg);
+}
+
+.profile-card-4:hover img {
+    transform: rotate(1deg) scale(1.1, 1.1);
+    filter: brightness(110%);
+}
+
+    </style>
+
+</br> </br><!--
+<div class="row row-cols-3 row-cols-md-3">
+
+       {% for i in doc %}
+               <div class="col mb-4">
+
+                         <div class="profile-card-4 text-center">
+                            <div class="profile-content">
+                                <div class=" Patient_type ">
+
+                                </div>
+                                <div class="Patient_owner_name"><h4></h4></div>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="profile-overview">
+
+                                            <table class="table table-dark" >
+                                                <thead class="thead-light">
+                                                <td><h6>Patient_owner_name:</h6></td>
+                                                <td><h6></h6></td>
+                                            </tr>
+
+
+                                            <tr>
+                                            <td><h6> patient_owner_phone_no:</h6></td>
+                                                <td><h6>{{ i.patient_owner_phone_no }}</h6></td>
+                                            </tr>
+                                            <tr>
+
+                                            <td><h6>pet_age:</h6></td>
+                                                <td><h6>{{ i.pet_age}}</h6></td>
+                                            </tr>
+                                            <tr>
+                                            <td><h6>pet_gender:</h6></td>
+                                                <td><h6>{{ i.pet_gender }}</h6></td>
+                                            </tr>
+
+                                             <td><h6>Patient_type:</h6></td>
+                                                <td><h6>{{ i.Patient_type }}</h6></td>
+                                            </tr>
+{#                                            <tr>#}
+{#                                            <td><h6> Color:</h6></td>#}
+{#                                                <td><h6>{{ i.color}}</h6></td>#}
+{#                                            </tr>#}
+{#                                                <tr>#}
+                                            <td><h6> pet_problem:</h6></td>
+                                                <td><h6>{{ i.pet_problem}}</h6></td>
+                                            </tr>
+                                                <tr>
+                                            <td><h6>  </h6></td>
+                                                <td><h6></h6></td>
+                                            </tr>
+{#                                                <tr>#}
+{#                                            <td><h6> Weight:</h6></td>#}
+{#                                                <td><h6>{{ i.weight}}</h6></td>#}
+{#                                            </tr>#}
+                                                </thead>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="profile-overview">
+
+{#                                            <h6>{{ i.id }}</h6>#}
+{#                                            <h6>{{ i.room_no}}</h6>#}
+{#                                            <h6>{{ i.size_in_sqfeet }}</h6>#}
+{#                                            <h6>{{ i.rent }}</h6>#}
+{#                                            <form method="post">#}
+{#                          {% csrf_token %}#}
+{##}
+{#                          <a href="/deletehouse/{{ i.id }}"><button type="button" class="btn btn-danger">Delete</button></a>#}
+{#                          <input type="submit" class="btn btn-primary" value="Cancel"/>#}
+{#                      </form>#}
+{#                                            <br>#}
+{#                                            <a href ="{{ i.id }}">#}
+{#                        <button type="button" class="btn btn-outline-primary"></button>#}
+{#                  </a>#}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+               </div>
+
+
+        {% endfor %}
+
+    </div>
+{% endblock content %} -->

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>{{ message }}</h3>
+
+<div class="row row-cols-3 row-cols-md-3">
+
+ {% for i in doc %}
+     <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <h3 style="background-color:DarkSalmon;">Patient Information</h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><h6 >Patient Type:-</h6>{{ i.Patient_type }}</li>
+      <li class="list-group-item"><h6>patient_owner_name :-</h6>{{ i.patient_owner_name }}</li>
+      <li class="list-group-item"> <h6>patient_owner_phone_no :- </h6>{{ i.patient_owner_phone_no }}</li>
+      <li class="list-group-item"><h6>pet_age :- </h6>{{ i.pet_age}}</li>
+      <li class="list-group-item"><h6>pet_gender:- </h6>{{ i.pet_gender }}</li>
+      <li class="list-group-item"><h6>pet_problem:- </h6>{{ i.pet_problem}}</li>
+      <li class="list-group-item"><h6>Date and Time </h6>{{ i.date_time }}</li>
+  </ul>
+         <button  class="btn btn-outline-dark mr-2" type="submit" id="id"> <a class="dropdown-item" href="{% url 'video' %}"><h3 style="background-color:Teal;">Video chat</h3></button></a>
+</div>
+
+<br>
+     <br>
+     <br>
+     <br>
+
+
+
+
+        {% endfor %}
+<br> <br>
+     <br>
+     <br>
+
+
+</div>
+{% endblock content %}
